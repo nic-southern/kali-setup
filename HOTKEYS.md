@@ -5,7 +5,7 @@ This setup is tuned for a Mac keyboard running Kali in a Parallels VM.
 Bottom row:
 
 - `Control`: tmux prefix key
-- `Option`: fast tmux movement key, sent to Kali as `Alt` / `Meta`
+- `Option`: normal terminal word movement and tmux window jumps
 - `Command`: mostly left alone for macOS and Parallels
 
 In Parallels, make sure the left or right `Option` key is set to send `Alt` to the VM.
@@ -42,14 +42,17 @@ Press `Control + Space`, release both keys, then press the next key.
 | Split top/bottom | `Control + Space`, then `-` |
 | Split left/right, default tmux key | `Control + Space`, then `%` |
 | Split top/bottom, default tmux key | `Control + Space`, then `"` |
-| Move left | `Option + h` or `Option + Left` |
-| Move down | `Option + j` or `Option + Down` |
-| Move up | `Option + k` or `Option + Up` |
-| Move right | `Option + l` or `Option + Right` |
-| Resize left/right | `Control + Option + h/l` |
-| Resize up/down | `Control + Option + k/j` |
+| Move left | `Control + Option + h` or `Control + Option + Left` |
+| Move down | `Control + Option + j` or `Control + Option + Down` |
+| Move up | `Control + Option + k` or `Control + Option + Up` |
+| Move right | `Control + Option + l` or `Control + Option + Right` |
+| Resize left/right | `Control + Space`, then `H`/`L` |
+| Resize up/down | `Control + Space`, then `K`/`J` |
 | Close pane | `Control + Space`, then `x` |
 | Zoom pane | `Control + Space`, then `z` |
+
+Plain `Option + Left` and `Option + Right` are intentionally left for moving between words in the terminal.
+If those keys print `D` or `C`, rerun `setup.sh` and open a new shell so the bash/zsh keybindings load.
 
 ## Copy And Paste
 

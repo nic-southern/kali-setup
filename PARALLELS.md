@@ -5,7 +5,7 @@ These settings pair with `tmux.conf` and `HOTKEYS.md`.
 Goal:
 
 - `Control` works normally inside Kali, including `Control-C`.
-- `Option` is sent to Kali as `Alt` / `Meta` for tmux navigation.
+- `Option` is sent to Kali as `Alt` / `Meta` for normal terminal word movement.
 - `Command` stays mostly reserved for macOS and Parallels.
 - Copying from tmux lands in the Kali clipboard and syncs back to macOS.
 
@@ -82,14 +82,15 @@ Then press:
 
 - `Control + c`
 - `Control + Space`
-- `Option + h`
 - `Option + Left`
+- `Control + Option + h`
 
 Expected:
 
 - `Control + c` shows an interrupt-style control character.
 - `Control + Space` should show a control-space/null style event.
 - `Option` keys should show escape-prefixed sequences, often starting with `^[`.
+- `Control + Option` keys should also reach Kali for tmux pane movement.
 
 Press `Control + d` to exit `showkey`.
 

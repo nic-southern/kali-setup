@@ -27,8 +27,9 @@ if command -v xbindkeys >/dev/null 2>&1 && [ -n "${DISPLAY:-}" ]; then
     xbindkeys
 fi
 
-# Install shell aliases for bash and zsh
+# Install shell aliases and keybindings for bash and zsh
 cp aliases.sh ~/.kali_aliases
+cp shell-keybindings.sh ~/.kali_keybindings
 for shell_rc in ~/.bashrc ~/.zshrc; do
     touch "$shell_rc"
     if ! grep -q 'source ~/.kali_aliases' "$shell_rc"; then
@@ -36,6 +37,13 @@ for shell_rc in ~/.bashrc ~/.zshrc; do
             echo ''
             echo '# Nic Kali aliases'
             echo '[ -f ~/.kali_aliases ] && source ~/.kali_aliases'
+        } >> "$shell_rc"
+    fi
+    if ! grep -q 'source ~/.kali_keybindings' "$shell_rc"; then
+        {
+            echo ''
+            echo '# Nic Kali keyboard bindings'
+            echo '[ -f ~/.kali_keybindings ] && source ~/.kali_keybindings'
         } >> "$shell_rc"
     fi
 done
@@ -78,5 +86,5 @@ if [ ! -d /usr/share/powercat ]; then
 fi
 
 # Make powercat executable
-sudo chmod +x /usr/share/powercat/powercat.sh
+sudo chmod +x /usr/share/powercat/powercat.ps1
 
