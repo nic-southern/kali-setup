@@ -1,0 +1,9 @@
+# Mac Command key fallback for Kali.
+# If Parallels passes Command through as the Linux Super key, these make
+# Command-C / Command-V behave like terminal copy / paste.
+
+"xdotool key --clearmodifiers ctrl+shift+c"
+  Mod4 + c
+
+"xdotool key --clearmodifiers ctrl+shift+v"
+  Mod4 + v
